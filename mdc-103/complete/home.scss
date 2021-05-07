@@ -8,6 +8,7 @@
 
 .home {
   display: flex; // Flexbox is used to easily arrange the persistent drawer and content side-by-side
+  background-color: $mdc-theme-background;
 }
 
 .shrine-logo-drawer {
@@ -15,7 +16,7 @@
   width: 48px;
   padding: 40px 0 0;
   margin: 0 auto;
-  fill: currentColor;
+  fill: $mdc-theme-on-primary;
 }
 
 .shrine-title {
@@ -23,25 +24,8 @@
 
   text-align: center;
   margin: 5px auto;
-}
 
-.product-list {
-  @include mdc-image-list-masonry-columns(4);
-
-  overflow: auto;
-  padding: 80px 100px 0;
-
-  .mdc-image-list__supporting {
-    justify-content: center;
-  }
-
-  .mdc-image-list__item {
-    padding: 10px;
-  }
-
-  .mdc-image-list__label {
-    @include mdc-typography(subtitle2);
-  }
+  color: $mdc-theme-on-primary;
 }
 
 .shrine-drawer {
@@ -81,9 +65,28 @@
 }
 
 .shrine-body {
-  @include mdc-elevation(4);
-
   display: block;
   overflow: auto;
   z-index: 0; // Elevate over the drawer
+}
+
+.product-list {
+  @include mdc-image-list-masonry-columns(4);
+
+  overflow: auto;
+
+  .mdc-image-list__supporting {
+    justify-content: center;
+  }
+
+  .mdc-image-list__item {
+    padding: 10px;
+  }
+
+  .mdc-image-list__label {
+    @include mdc-typography(subtitle2);
+  }
+
+  padding: 80px 100px 0;
+
 }
